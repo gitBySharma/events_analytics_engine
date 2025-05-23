@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsightTrack Analytics</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #1faa9c 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            backdrop-filter: blur(10px);
+            padding: 0.2rem 0;
+        }
+
+        .navbar-brand {
+            font-size: 2.5rem !important;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: white !important;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: translateY(-2px);
+            text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .content-card {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 4rem;
+            padding-top: 0.1px;
+            padding-bottom: 0.5rem;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            max-width: auto;
+            width: 100%;
+        }
+
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .display-4 {
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #4a5568;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            padding: 0.75rem 2rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+
+        .features-section {
+            margin-top: 4rem;
+        }
+
+        .features-section h3 {
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .features-section p {
+            color: #4a5568;
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-bottom {
+            color: rgba(255, 255, 255, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 0.5rem;
+            width: 100%;
+            font-weight: bold;
+            padding-bottom: 0.1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-graph-up me-2"></i>
+                InsightTrack
+            </a>
+        </div>
+    </nav>
+
+    <div class="content-card">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+                <h1 class="display-4">Powerful Analytics<br>For Your Website</h1>
+                <p class="lead mb-4">Track user interactions, clicks, and visits with our lightweight API. Gain
+                    insights to optimize your user experience.</p>
+
+                <div class="demo-buttons">
+                    <button class="btn btn-primary btn-lg" id="register_btn">
+                        <img src="img/google_logo.png" alt="Google logo" style="width: 28px; height: 28px;"
+                            class="me-3">
+                        Continue with Google
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="img/img3.png" alt="Analytics illustration" class="hero-image">
+            </div>
+        </div>
+
+        <div class="features-section">
+            <div class="row g-4">
+                <div class="col-md-4 text-center">
+                    <i class="bi bi-speedometer2 feature-icon"></i>
+                    <h3>Real-time Tracking</h3>
+                    <p>Capture clicks, page views, and user interactions instantly</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="bi bi-bar-chart feature-icon"></i>
+                    <h3>Comprehensive Reports</h3>
+                    <p>Detailed analytics on user behavior and traffic sources</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="bi bi-shield-lock feature-icon"></i>
+                    <h3>Secure API</h3>
+                    <p>Enterprise-grade security with API key authentication</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-bottom">
+                    <p>&copy; 2025 InsightTrack Analytics. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"></script>
+
+</html>
+<!-- <script>
+    // Event tracking demo
+    document.getElementById('demo_btn').addEventListener('click', function () {
+        // Track a demo event
+        fetch('/api/analytics/collect', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'API-Key': 'DEMO_KEY_123' // Replace with actual key in production
+            },
+            body: JSON.stringify({
+                event: 'demo_button_click',
+                url: window.location.href,
+                referrer: document.referrer || 'direct',
+                device: navigator.userAgent.match(/Mobi/i) ? 'mobile' : 'desktop'
+            })
+        })
+            .then(response => alert('Demo event tracked successfully!'))
+            .catch(error => console.error('Error tracking event:', error));
+    });
+
+    // API key registration
+    document.getElementById('register_btn').addEventListener('click', function () {
+        window.location.href = '/api/auth/register';
+    });
+</script> -->
