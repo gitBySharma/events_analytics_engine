@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const mongoose = require("mongoose");
 
 
 const app = express();
@@ -20,6 +21,13 @@ app.get('/', (req, res, next) => {
 });
 
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server is live at port ${process.env.PORT}`);
-});
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING)
+    .then(() => {
+        console.log("Connected to MonogoDb Database")
+        app.listen(process.env.PORT, () => {
+            console.log(`Server is live at port ${process.env.PORT}`);
+        })
+
+    }).catch((error) => {
+        console.log("Database connection error ", error);
+    });
