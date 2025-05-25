@@ -150,7 +150,7 @@
                     insights to optimize your user experience.</p>
 
                 <div class="demo-buttons">
-                    <button class="btn btn-primary btn-lg" id="register_btn">
+                    <button class="btn btn-primary btn-lg" id="google_btn">
                         <img src="img/google_logo.png" alt="Google logo" style="width: 28px; height: 28px;"
                             class="me-3">
                         Continue with Google
@@ -197,30 +197,51 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"></script>
 
-</html>
-<!-- <script>
-    // Event tracking demo
-    document.getElementById('demo_btn').addEventListener('click', function () {
-        // Track a demo event
-        fetch('/api/analytics/collect', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'API-Key': 'DEMO_KEY_123' // Replace with actual key in production
-            },
-            body: JSON.stringify({
-                event: 'demo_button_click',
-                url: window.location.href,
-                referrer: document.referrer || 'direct',
-                device: navigator.userAgent.match(/Mobi/i) ? 'mobile' : 'desktop'
-            })
-        })
-            .then(response => alert('Demo event tracked successfully!'))
-            .catch(error => console.error('Error tracking event:', error));
-    });
+<script>
+    // // Event tracking demo
+    // document.getElementById('demo_btn').addEventListener('click', function () {
+    //     // Track a demo event
+    //     fetch('/api/analytics/collect', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             'API-Key': 'DEMO_KEY_123' // Replace with actual key in production
+    //         },
+    //         body: JSON.stringify({
+    //             event: 'demo_button_click',
+    //             url: window.location.href,
+    //             referrer: document.referrer || 'direct',
+    //             device: navigator.userAgent.match(/Mobi/i) ? 'mobile' : 'desktop'
+    //         })
+    //     })
+    //         .then(response => alert('Demo event tracked successfully!'))
+    //         .catch(error => console.error('Error tracking event:', error));
+    // });
 
-    // API key registration
-    document.getElementById('register_btn').addEventListener('click', function () {
-        window.location.href = '/api/auth/register';
+    // // API key registration
+    // document.getElementById('register_btn').addEventListener('click', function () {
+    //     window.location.href = '/api/auth/register';
+    // });
+
+    const google_btn = document.getElementById("google_btn");
+    google_btn.addEventListener("click", async (event) => {
+        event.preventDefault();
+
+        try {
+            const response = await axios.get("/auth/google/url");
+
+            // Check if the response contains the URL and redirect the current window to it
+            if (response.data && response.data.url) {
+                window.location.href = response.data.url;  // Redirect to the Google login page in the same tab
+            } else {
+                alert('Error: Google login URL not found.');
+            }
+
+        } catch (error) {
+            console.log("Login Error", error);
+
+        }
     });
-</script> -->
+</script>
+
+</html>
