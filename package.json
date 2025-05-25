@@ -1,11 +1,12 @@
 {
-  "name": "events_analytics_eengine",
+  "name": "events_analytics_engine",
   "version": "1.0.0",
   "description": "An unified events analytics engine for apps and websites",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "swagger": "node swagger.js"
   },
   "author": "Subhankar Sharma",
   "license": "ISC",
@@ -19,5 +20,8 @@
     "mongoose": "^8.15.0",
     "nodemon": "^3.1.10",
     "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "swagger-autogen": "^2.23.7"
   }
 }
