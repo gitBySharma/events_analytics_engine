@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const GoogleInfo = new Schema({
+const GoogleInfoSchema = new Schema({
     googleId: {
         type: String,
         required: true,
@@ -20,4 +20,4 @@ const GoogleInfo = new Schema({
 }, { timestamps: true });
 
 
-module.exports = mongoose.model("GoogleInfo", GoogleInfo);
+module.exports = mongoose.model("GoogleInfo", GoogleInfoSchema);

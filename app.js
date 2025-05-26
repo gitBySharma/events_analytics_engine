@@ -11,6 +11,7 @@ const swaggerDocument = require('./swagger-output.json');
 
 const GoogleInfo = require("./models/googleInfo.js");
 const googleInfoRoutes = require("./routes/googleInfo.js");
+const APIkeyManagementRoutes = require("./routes/APIkeyManagement.js");
 
 
 const app = express();
@@ -30,6 +31,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 app.use(googleInfoRoutes);
+app.use(APIkeyManagementRoutes);
 
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING)
