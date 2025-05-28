@@ -9,6 +9,8 @@ const authentication = require("../middleware/authentication.js");
 //route to register and generate API key
 router.post("/api/auth/register", authentication.googleIDAuthentication, APIkeyManagementController.register_and_generateAPIKey);
 
+//route to retrieve a api key
+router.get("/api/auth/api-key", authentication.googleIDAuthentication, APIkeyManagementController.getAPIkey);
 
 
 module.exports = router;

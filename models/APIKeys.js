@@ -12,7 +12,7 @@ const APIKeysSchema = new Schema({
         Unique: true,
         required: true
     },
-    APIid: {
+    createdBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "GoogleInfo",
         required: true

@@ -6,7 +6,7 @@ const User = require("../models/googleInfo.js");
 
 exports.googleIDAuthentication = async (req, res, next) => {
     try {
-        //get the token, either from header or query param for first successfull login
+        //get the token, either from header or query param for first successful login
         const token = req.header("Authorization") ? req.header("Authorization") : req.query.token;
         if (!token) {
             return res.status(400).json({ message: "Access denied. No token provided" });
@@ -27,7 +27,7 @@ exports.googleIDAuthentication = async (req, res, next) => {
 
         }
 
-        const user = await User.findOne({ id: decodedUser._id });
+        const user = await User.findById(decodedUser.id);
         if (!user) {
             return res.status(404).json({ message: "User not found" });
 
