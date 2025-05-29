@@ -12,5 +12,8 @@ router.post("/api/auth/register", authentication.googleIDAuthentication, APIkeyM
 //route to retrieve a api key
 router.get("/api/auth/api-key", authentication.googleIDAuthentication, APIkeyManagementController.getAPIkey);
 
+//route to revoke an api key
+router.post("/api/auth/revoke", authentication.googleIDAuthentication, APIkeyManagementController.revokeAPIkey);
+
 
 module.exports = router;

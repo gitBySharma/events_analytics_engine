@@ -12,6 +12,11 @@ const APIKeysSchema = new Schema({
         Unique: true,
         required: true
     },
+    APIKeyHash: {
+        type: String,
+        Unique: true,
+        required: true
+    },
     createdBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "GoogleInfo",

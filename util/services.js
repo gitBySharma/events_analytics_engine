@@ -11,6 +11,12 @@ exports.generate_API_key = function () {
 }
 
 
+//function to generate a hash of the api key for future lookup in database
+exports.hash = function (text) {
+    return crypto.createHash('sha256').update(text).digest('hex');
+}
+
+
 //function to encrypt a string
 exports.encrypt = function (text) {
     const iv = crypto.randomBytes(16);
