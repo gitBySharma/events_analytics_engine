@@ -10,6 +10,8 @@ const swaggerDocument = require('./swagger-output.json');
 
 
 const GoogleInfo = require("./models/googleInfo.js");
+const EventData = require("./models/eventData.js");
+
 const googleInfoRoutes = require("./routes/googleInfo.js");
 const APIkeyManagementRoutes = require("./routes/APIkeyManagement.js");
 
